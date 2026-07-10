@@ -65,21 +65,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Set inactive state on all buttons
             tabButtons.forEach(btn => {
-                btn.classList.remove('active');
+                btn.classList.remove('tab-active');
                 btn.setAttribute('aria-selected', 'false');
             });
 
             // Set inactive state on all panels
             tabPanels.forEach(panel => {
-                panel.classList.remove('active');
+                panel.classList.remove('panel-active');
             });
 
             // Activate clicked tab and panel
-            button.classList.add('active');
+            button.classList.add('tab-active');
             button.setAttribute('aria-selected', 'true');
             const targetPanel = document.getElementById(targetTab);
             if (targetPanel) {
-                targetPanel.classList.add('active');
+                targetPanel.classList.add('panel-active');
             }
         });
     });
