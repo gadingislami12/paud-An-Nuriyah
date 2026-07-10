@@ -1708,10 +1708,21 @@ a {
     .kontak-grid {
         grid-template-columns: 1fr;
     }
+    
+    .legalitas-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 @media (max-width: 768px) {
-    /* Global Typography on Mobile */
+    /* Global Typography & Spacing on Mobile */
+    .container {
+        padding: 0 16px;
+    }
+    .section-padding {
+        padding: 50px 0;
+    }
     .section-title-wrapper {
         margin-bottom: 30px;
     }
@@ -1723,19 +1734,59 @@ a {
         padding: 3px 12px;
     }
     
+    /* Top Announcement Bar */
+    .top-announcement {
+        padding: 10px 0;
+    }
+    .announcement-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+    }
+    .announcement-content p {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        text-align: center;
+    }
+    
     /* Navigation Bar Mobile drawer */
     .main-header {
-        padding: 8px 0;
+        padding: 6px 0;
     }
     .nav-container {
-        height: 70px;
+        height: 65px;
+    }
+    .logo-area {
+        gap: 8px;
+    }
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+    .logo-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+    .brand-name {
+        font-size: 1.15rem;
+    }
+    .brand-sub {
+        font-size: 0.65rem;
+    }
+    .mobile-menu-toggle {
+        display: block;
+        padding: 6px;
     }
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 65px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 65px);
         background-color: rgba(252, 251, 247, 0.98);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
@@ -1754,9 +1805,9 @@ a {
         gap: 12px;
     }
     .nav-link {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         display: block;
-        padding: 14px 20px;
+        padding: 12px 20px;
         border-radius: var(--border-radius-md);
         text-align: center;
     }
@@ -1765,13 +1816,10 @@ a {
         margin-left: 0 !important;
         box-shadow: none;
     }
-    .mobile-menu-toggle {
-        display: block;
-    }
 
     /* Hero Section Mobile */
     .hero-section {
-        padding: 30px 0 60px;
+        padding: 40px 0 60px;
     }
     .hero-text {
         text-align: center;
@@ -1800,8 +1848,8 @@ a {
         padding: 14px 28px;
     }
     .hero-visual {
-        max-width: 280px;
-        margin: 20px auto 0;
+        max-width: 320px;
+        margin: 25px auto 0;
     }
 
     /* 2x2 Stats Grid for Mobile */
@@ -1812,10 +1860,10 @@ a {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
-        padding: 0 12px;
+        padding: 0;
     }
     .stat-card {
-        padding: 16px 12px;
+        padding: 14px 10px;
         flex-direction: column;
         text-align: center;
         gap: 8px;
@@ -1835,6 +1883,7 @@ a {
     }
     .stat-details p {
         font-size: 0.75rem;
+        line-height: 1.3;
     }
 
     /* Profil Tab Panels Mobile */
@@ -1889,6 +1938,10 @@ a {
     .highlight-intro h3 {
         font-size: 1.5rem;
     }
+    .highlight-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
     .program-sub-title {
         font-size: 1.6rem;
         margin-bottom: 25px;
@@ -1904,6 +1957,24 @@ a {
         padding: 30px 20px 20px;
     }
 
+    /* Budaya & Nilai Lokal Grid (Cegah Overflow) */
+    .budaya-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .b-card {
+        padding: 24px;
+    }
+
+    /* Tenaga Pendidik Grid */
+    .teachers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .teacher-card {
+        padding: 20px 16px;
+    }
+
     /* Galeri & Berita Mobile */
     .gallery-filters {
         gap: 6px;
@@ -1914,7 +1985,7 @@ a {
         font-size: 0.9rem;
     }
     .gallery-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
     .berita-grid {
@@ -1923,6 +1994,10 @@ a {
     }
 
     /* Legalitas & Bank Mobile */
+    .legalitas-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
     .legalitas-table-card {
         padding: 24px 20px;
     }
@@ -1931,7 +2006,7 @@ a {
         margin-bottom: 18px;
     }
     .data-table td {
-        padding: 10px 6px;
+        padding: 10px 4px;
         font-size: 0.85rem;
     }
     .legalitas-bank-card {
@@ -1963,6 +2038,10 @@ a {
     .registration-form {
         gap: 14px;
     }
+    .form-group-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
     .form-group input, 
     .form-group select, 
     .form-group textarea {
@@ -1970,13 +2049,14 @@ a {
         font-size: 0.9rem;
     }
 
-    /* Footer Mobile styling */
+    /* Footer Mobile styling (Diperbaiki Grid dan Centering) */
     .footer {
         padding: 50px 0 0;
     }
     .footer-grid {
+        grid-template-columns: 1fr;
         padding-bottom: 30px;
-        gap: 25px;
+        gap: 30px;
     }
     .footer-brand {
         align-items: center;
@@ -2007,6 +2087,43 @@ a {
         flex-direction: column;
         text-align: center;
         gap: 10px;
+    }
+
+    /* Gallery Modal Mobile */
+    .modal-content {
+        padding: 20px;
+        border-radius: var(--border-radius-md);
+    }
+    .modal-close {
+        top: 15px;
+        right: 15px;
+    }
+    .modal-body-placeholder {
+        height: 200px;
+    }
+    .modal-content h4 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Extra Small Screens (Smartphones) */
+@media (max-width: 576px) {
+    .teachers-grid,
+    .highlight-cards-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .misi-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .misi-number {
+        margin: 0 auto;
     }
 }
 
@@ -2249,9 +2366,3 @@ a {
     margin-bottom: 0;
 }
 
-@media (max-width: 992px) {
-    .legalitas-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
